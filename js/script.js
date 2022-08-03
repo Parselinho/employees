@@ -8,7 +8,8 @@ function showPage(list, page) {
   const startIndex = (page * numPage) - numPage;
   const endIndex = page * numPage;
   studentList.innerHTML = "";
-  for (let i=0; i < list.length; i++){
+ // for (let i=0; i < list.length; i++){
+  for(let i in list) {
    if (i >= startIndex && i < endIndex){ // adding list of 9 students with personal infos
     let showList =   `<li class="student-item cf">
       <div class="student-details">
@@ -71,7 +72,8 @@ function searchFilter(search, list) {
    // empty array to store the results
    let newPage = [];
    
-   for (i=0; i < list.length; i++) {
+   //for (i=0; i < list.length; i++)
+   for(let i in list) {
       // store fullname, and Ignore upper or lower case.
    let fullName = `${list[i].name.first.toLowerCase()} ${list[i].name.last.toLowerCase()}`;
 
